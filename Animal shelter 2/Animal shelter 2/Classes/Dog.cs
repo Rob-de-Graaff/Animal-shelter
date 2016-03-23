@@ -8,44 +8,59 @@ namespace Animal_shelter_2
 {
     public class Dog : Animal
     {
-        private SimpleDate lastWalkDate;
+        #region fields
+        private Gender gender;
+        private DateTime lastWalkDate;
+        private string noise;
+        #endregion
 
-        public SimpleDate LastWalkDate
+        #region properties
+        public DateTime LastWalkDate
         {
             get { return lastWalkDate; }
             set { lastWalkDate = value; }
         }
+        #endregion
 
-        public Dog(string name, SimpleDate dateOfBirth, Gender gender)
-            : base(name, dateOfBirth, gender)
+        #region constructor
+        public Dog(string name, Gender gender, DateTime lastWalkDater, string noise)
+            : base(name, gender)
         {
-            this.lastWalkDate = lastWalkDate;
+            this.LastWalkDate = lastWalkDate;
+        }
+        #endregion 
+
+        #region methodes
+        public override string MakeNoise()
+        {
+            string noise = "woef";
+            return noise;
         }
 
         public override string ToString()
         {
-            string dateOfBirthString;
-            if (dateOfBirth == null)
-            {
-                dateOfBirthString = "00-00-0000";
-            }
-            else
-            {
-                dateOfBirthString = dateOfBirth.ToString();
-            }
-
             string nameString;
-            if (name == null || name == "")
+            if (Name == null || Name == "")
             {
                 nameString = "noname";
             }
             else
             {
-                nameString = name;
+                nameString = Name;
+            }
+
+            string genderString = "";
+            if (gender == Gender.Male)
+            {
+                genderString = "male";
+            }
+            else if (gender == Gender.Female)
+            {
+                genderString = "female";
             }
 
             string IsReservedString;
-            if (isReserved)
+            if (IsReserved)
             {
                 IsReservedString = "reserved";
             }
@@ -54,11 +69,23 @@ namespace Animal_shelter_2
                 IsReservedString = "not reserved";
             }
 
-            string info = dateOfBirthString
-                + ", " + nameString
-                + ", " + IsReservedString;
+            string lastWalkDateString;
+            if (LastWalkDate == null)
+            {
+                lastWalkDateString = "00-00-0000";
+            }
+            else
+            {
+                lastWalkDateString = LastWalkDate.ToString();
+            }
+
+            string info = nameString
+                + ", " + genderString
+                + ", " + IsReservedString
+                + ", " + lastWalkDateString;
 
             return info;
         }
+        #endregion
     }
 }

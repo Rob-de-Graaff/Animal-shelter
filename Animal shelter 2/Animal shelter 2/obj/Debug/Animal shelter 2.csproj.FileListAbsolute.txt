@@ -1,5 +1,9 @@
 C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\bin\Debug\Animal shelter 2.exe.config
 C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal shelter 2.csprojResolveAssemblyReference.cache
-C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal_shelter_2.Form1.resources
 C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal_shelter_2.Properties.Resources.resources
 C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal shelter 2.csproj.GenerateResource.Cache
+C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal_shelter_2.ReservatieForm.resources
+C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\bin\Debug\Animal shelter 2.exe
+C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\bin\Debug\Animal shelter 2.pdb
+C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal shelter 2.exe
+C:\ASUS bu\FHICT\SE\S2\Animal shelter 2\Animal shelter 2\obj\Debug\Animal shelter 2.pdb

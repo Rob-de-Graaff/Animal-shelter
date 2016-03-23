@@ -6,27 +6,19 @@ using System.Threading.Tasks;
 
 namespace Animal_shelter_2
 {
-    abstract class Animal
+    public abstract class Animal
     {
+        #region fields
         private string name;
-        private SimpleDate dateOfBirth;
-        private bool isReserved;
         private Gender gender;
+        private bool isReserved;
+        private ReservatieForm RF;
+        #endregion
 
-        public SimpleDate DateOfBirth
-        {
-            get { return dateOfBirth; }
-        }
-
+        #region properties
         public string Name
         {
             get { return name; }
-        }
-
-        public bool IsReserved
-        {
-            get { return isReserved; }
-            set { isReserved = value; }
         }
 
         public Gender Gender
@@ -35,26 +27,28 @@ namespace Animal_shelter_2
             set { gender = value; }
         }
 
-        public Animal(string name, SimpleDate dateOfBirth, Gender gender)
-        { 
-            if (animalGenderComboBox.SelectedItem.Value = "Male")
-            {
-                this.gender = gender;
-            }
+        public bool IsReserved
+        {
+            get { return isReserved; }
+            set { isReserved = value; }
         }
+        #endregion
 
+        //
+        public abstract string MakeNoise();
+
+        #region constructor
+        public Animal(string name, Gender gender)
+        {
+            this.name = name;
+            this.gender = gender;
+            isReserved = false;
+        }
+        #endregion
+
+        #region methode
         public override string ToString()
         {
-            string dateOfBirthString;
-            if (dateOfBirth == null)
-            {
-                dateOfBirthString = "00-00-0000";
-            }
-            else
-            {
-                dateOfBirthString = dateOfBirth.ToString();
-            }
-
             string nameString;
             if (name == null || name == "")
             {
@@ -63,6 +57,16 @@ namespace Animal_shelter_2
             else
             {
                 nameString = name;
+            }
+
+            string genderString = "";
+            if (gender == Gender.Male)
+            {
+                genderString = "male";
+            }
+            else if (gender == Gender.Female)
+            {
+                genderString = "female";
             }
 
             string IsReservedString;
@@ -75,11 +79,12 @@ namespace Animal_shelter_2
                 IsReservedString = "not reserved";
             }
 
-            string info = dateOfBirthString
-                + ", " + nameString
+            string info = nameString
+                + ", " + genderString
                 + ", " + IsReservedString;
 
             return info;
         }
+        #endregion
     }
 }

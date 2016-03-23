@@ -20,7 +20,7 @@ namespace Animal_shelter_2
             err = "";
             if (animal.Name == "")
             {
-                err = "Animal with this number cannot be created.";
+                err = "Animal with this name cannot be created.";
                 return false;
             }
             foreach (Animal an in Animals)

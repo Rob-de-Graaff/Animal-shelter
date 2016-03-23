@@ -8,44 +8,59 @@ namespace Animal_shelter_2
 {
     public class Cat : Animal
     {
+        #region fields
+        private Gender gender;
         private string badHabits;
+        private string noise;
+        #endregion
 
+        #region properties
         public string BadHabits
         {
             get { return badHabits; }
             set { badHabits = value; }
         }
+        #endregion
 
-        public Cat(string name, SimpleDate dateOfBirth, Gender gender)
-            : base(name, dateOfBirth, gender)
+        #region constructor
+        public Cat(string name, Gender gender, string badHabbits, string noise)
+            : base(name, gender)
         {
-            this.badHabits = badHabits;
+            this.BadHabits = badHabits;
+        }
+        #endregion
+
+        #region methodes
+        public override string MakeNoise()
+        {
+            noise = "miauw";
+            return noise;
         }
 
         public override string ToString()
         {
-            string dateOfBirthString;
-            if (dateOfBirth == null)
-            {
-                dateOfBirthString = "00-00-0000";
-            }
-            else
-            {
-                dateOfBirthString = dateOfBirth.ToString();
-            }
-
             string nameString;
-            if (name == null || name == "")
+            if (Name == null || Name == "")
             {
                 nameString = "noname";
             }
             else
             {
-                nameString = name;
+                nameString = Name;
+            }
+
+            string genderString = "";
+            if (gender == Gender.Male)
+            {
+                genderString = "male";
+            }
+            else if (gender == Gender.Female)
+            {
+                genderString = "female";
             }
 
             string IsReservedString;
-            if (isReserved)
+            if (IsReserved)
             {
                 IsReservedString = "reserved";
             }
@@ -54,11 +69,25 @@ namespace Animal_shelter_2
                 IsReservedString = "not reserved";
             }
 
-            string info = dateOfBirthString
-                + ", " + nameString
-                + ", " + IsReservedString;
+            string badHabitString;
+            if (BadHabits == null || BadHabits == "")
+            {
+                badHabitString = "NoBadHabbits";
+            }
+            else
+            {
+                badHabitString = BadHabits;
+            }
+
+
+            string info = nameString
+                + ", " + genderString
+                + ", " + IsReservedString
+                + ", " + badHabitString
+                + ", " + MakeNoise();
 
             return info;
         }
+        #endregion
     }
 }
