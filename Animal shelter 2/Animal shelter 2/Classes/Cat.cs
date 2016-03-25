@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Animal_shelter_2
 {
     public class Cat : Animal
     {
         #region fields
-        private Gender gender;
         private string badHabits;
         private string noise;
         #endregion
@@ -37,8 +36,23 @@ namespace Animal_shelter_2
             return noise;
         }
 
+        public override int price()
+        {
+            int result = 350;
+            foreach (char c in badHabits)
+            {
+                if (!char.IsWhiteSpace(c) && result > 35)
+                {
+                    result -=20;
+                }
+            }
+            return result;
+        }
+
         public override string ToString()
         {
+            price();
+
             string nameString;
             if (Name == null || Name == "")
             {
@@ -50,11 +64,11 @@ namespace Animal_shelter_2
             }
 
             string genderString = "";
-            if (gender == Gender.Male)
+            if (Gender == Gender.Male)
             {
                 genderString = "male";
             }
-            else if (gender == Gender.Female)
+            else if (Gender == Gender.Female)
             {
                 genderString = "female";
             }

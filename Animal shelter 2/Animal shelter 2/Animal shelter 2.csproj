@@ -48,6 +48,7 @@
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Classes\Cat.cs" />
     <Compile Include="Classes\Dog.cs" />
+    <Compile Include="ISellable.cs" />
     <Compile Include="ReservatieForm.cs">
       <SubType>Form</SubType>
     </Compile>

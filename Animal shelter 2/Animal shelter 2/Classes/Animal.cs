@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Animal_shelter_2
 {
-    public abstract class Animal
+    public abstract class Animal : ISellable
     {
         #region fields
         private string name;
         private Gender gender;
         private bool isReserved;
-        private ReservatieForm RF;
+        private decimal prijs;
+        //private ReservatieForm RF;
         #endregion
 
         #region properties
@@ -32,11 +33,19 @@ namespace Animal_shelter_2
             get { return isReserved; }
             set { isReserved = value; }
         }
-        #endregion
 
-        //
+        public decimal Prijs
+        {
+            get { return prijs;}
+            set { prijs = value;}
+        }
+
         public abstract string MakeNoise();
 
+        public abstract int price();
+
+        #endregion
+        
         #region constructor
         public Animal(string name, Gender gender)
         {

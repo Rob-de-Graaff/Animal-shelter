@@ -9,9 +9,10 @@ namespace Animal_shelter_2
     public class Dog : Animal
     {
         #region fields
-        private Gender gender;
         private DateTime lastWalkDate;
         private string noise;
+        private Administration admin;
+        private Animal animal;
         #endregion
 
         #region properties
@@ -37,8 +38,23 @@ namespace Animal_shelter_2
             return noise;
         }
 
+        public override int price()
+        {
+            int result = 500;
+            foreach (Animal animal in admin.Animals)
+            {
+                if (result > 50)
+                {
+                    result -= 50;
+                }
+            }
+            return result;
+        }
+
         public override string ToString()
         {
+            price();
+
             string nameString;
             if (Name == null || Name == "")
             {
@@ -50,11 +66,11 @@ namespace Animal_shelter_2
             }
 
             string genderString = "";
-            if (gender == Gender.Male)
+            if (Gender == Gender.Male)
             {
                 genderString = "male";
             }
-            else if (gender == Gender.Female)
+            else if (Gender == Gender.Female)
             {
                 genderString = "female";
             }
