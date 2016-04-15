@@ -98,7 +98,8 @@ namespace Animal_shelter_2
                 + ", " + genderString
                 + ", " + IsReservedString
                 + ", " + badHabitString
-                + ", " + MakeNoise();
+                + ", " + MakeNoise()
+                + ", " + Prijs;
 
             return info;
         }

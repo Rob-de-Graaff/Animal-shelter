@@ -24,7 +24,7 @@ namespace Animal_shelter_2
         #endregion
 
         #region constructor
-        public Dog(string name, Gender gender, DateTime lastWalkDater, string noise)
+        public Dog(string name, Gender gender, DateTime lastWalkDate, string noise)
             : base(name, gender)
         {
             this.LastWalkDate = lastWalkDate;
@@ -98,7 +98,9 @@ namespace Animal_shelter_2
             string info = nameString
                 + ", " + genderString
                 + ", " + IsReservedString
-                + ", " + lastWalkDateString;
+                + ", " + lastWalkDateString
+                + ", " + MakeNoise()
+                + ", " + Prijs;
 
             return info;
         }

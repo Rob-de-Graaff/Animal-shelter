@@ -45,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbGedrag = new System.Windows.Forms.TextBox();
             this.tbNaam = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.showInfoButton = new System.Windows.Forms.Button();
             this.createAnimalButton = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@
             this.btnStream.TabIndex = 46;
             this.btnStream.Text = "Stream";
             this.btnStream.UseVisualStyleBackColor = true;
+            this.btnStream.Click += new System.EventHandler(this.btnStream_Click);
             // 
             // btnCancel
             // 
@@ -196,16 +196,6 @@
             this.tbNaam.Size = new System.Drawing.Size(100, 20);
             this.tbNaam.TabIndex = 30;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(441, 16);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(64, 23);
-            this.btnSearch.TabIndex = 29;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(236, 15);
@@ -280,7 +270,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbGedrag);
             this.Controls.Add(this.tbNaam);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.showInfoButton);
             this.Controls.Add(this.createAnimalButton);
@@ -311,7 +300,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbGedrag;
         private System.Windows.Forms.TextBox tbNaam;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button showInfoButton;
         private System.Windows.Forms.Button createAnimalButton;
